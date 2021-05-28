@@ -9,6 +9,7 @@ body{
     background-color:#fef2e5;
     padding: 20px 0 0 25px;
     z-index: 1000;
+    top:0;
 }
 #name{
     padding-right: 40%;
