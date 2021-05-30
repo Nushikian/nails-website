@@ -40,6 +40,22 @@
             <p class="text2">Ім'я Призвіще</p>
         </div>
       </div>
-    
+      <p class="text4">Залишити відгук</p>
+      <div class="form">
+        <form autocomplete="off" action='email.php' method='post'>
+                <div>
+                    <input type='text' name='subject' class="subject" placeholder="Ім'я, Призвіще" required>
+                </div>
+                <div>
+                    <input type='text' name='usermail'placeholder="Послуга" required>
+                </div>
+              <div class="column">
+                <p>Коментарі</p>
+                <textarea rows="7" cols="52" placeholder="Додайте повідомлення..."></textarea>
+                <p>Прикріпіть фото<input type="file" value="Выберите файл"></p>
+                <input class="submit" type='submit' value='Відправити'>
+              </div>
+        </form>
+      </div>
 </body>
 </html>

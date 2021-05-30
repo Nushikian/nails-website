@@ -115,7 +115,6 @@ Form{
 .column{
   position: relative;
   float: right;
-  /* bottom: 72px; */
 }
 input{
   padding: 7px;

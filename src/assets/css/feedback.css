@@ -109,3 +109,53 @@ p{
 .text2{
     font-size: 20px;
 }
+ .form{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    margin-top: 690px;
+    left: 30%;
+}
+input,textarea{
+    background-color: #fef2e5;
+    border-radius:10px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow:6px 6px 10px rgba(0,0,0,0.06)
+}
+input{
+    position: relative;
+    padding: 7px;
+    margin: 7px;
+    left: 80px;
+}
+textarea{
+    padding:15px;
+    height:150px;
+}
+.submit{
+    position: relative;
+    padding:10px;
+    border:none;
+    background-color:rgb(61, 61, 61);
+    color:#fef2e5;
+    font-weight:600;
+    border-radius:5px;
+    width: 140px;
+    left: 0;
+}
+.column{
+    position: relative;
+    float: right;
+    bottom: 145px;
+}
+.text4{
+    position: absolute;
+    font-family: "italic";
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    bottom:0;
+    left: 42%;
+}
