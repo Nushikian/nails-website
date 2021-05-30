@@ -287,3 +287,6 @@ h1{
     padding-right: 40%;
     font-size: 22px;
 }
+p,li{
+    color:#666;
+}
