@@ -89,6 +89,23 @@ p{
     font-style: italic;
     font-weight: bold;
 }
+.feedback-form.hide {
+    display: none;
+}
+.feedback-form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    transform: translate(-50%, -50%)
+}
 .layout { 
     width: 980px; 
     margin: auto; 
