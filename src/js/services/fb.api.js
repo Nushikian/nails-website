@@ -1,22 +1,20 @@
 export class DataBaseApi {
-    url = 'https://nails-website-default-rtdb.firebaseio.com';
-
-    get url() {
-        return this.url;
+    static get url() {
+        return 'https://nails-website-default-rtdb.firebaseio.com';
     }
 
-    getFieldDbUrl(endPoint) { 
-       return  `${this.url}/${endPoint}.json`;
+    static getFieldDbUrl(endPoint) { 
+       return  `${DataBaseApi.url}/${endPoint}.json`;
     }
 
-    static postRequest(endPoint) {
+    static async postRequest(endPoint, data) {
         try {
-            const request = new Request(this.getFieldDbUrl(endPoint), {
+            const request = new Request(DataBaseApi.getFieldDbUrl(endPoint), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
-            return await _useRequest(request)
+            return await _useRequest(request);
         } catch (error) {
             console.error(error)
         }
@@ -24,7 +22,7 @@ export class DataBaseApi {
 
     static async getRequest(endPoint) {
         try {
-            const request = new Request(this.getFieldDbUrl(endPoint));
+            const request = new Request(DataBaseApi.getFieldDbUrl(endPoint));
             return await _useRequest(request);
         } catch (error) {
             console.error(error);

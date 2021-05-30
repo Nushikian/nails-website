@@ -3,13 +3,13 @@ import {Validators} from './core/index';
 
 document.addEventListener('DOMContentLoaded', () => {
  new FormFeedBack({
-    showBtnFormSel: '.feedback-form-btn',
-    parentSel: '.layout',
+    parentSel: 'body',
     formSel: '.feedback-form',
     apiPoint: 'feedbacks',
     submitBtnSel: '.feedback-form-submit',
     controls: {
         name: [Validators.required],
+        service: [Validators.required],
         feedback: [Validators.required],
     }
  }).init()

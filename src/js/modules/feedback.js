@@ -1,4 +1,5 @@
-import {FormHTML} from '../core/index'
+import {FormHTML} from '../core/index';
+import {DataBaseApi} from '../services/index';
 export default class Feedback {
     constructor() {
         console.log('feedback');
@@ -14,17 +15,25 @@ export class FormFeedBack extends FormHTML {
     }
 
     init() {
+        console.log('init',this)
         super.init();
-        console.log('init form', this)
-        this.$showBtn.addEventListener('click', this.toggleForm);
         this.$form.addEventListener('submit', this.onSubmit)
     }
 
-    onSubmit(e) {
+    async onSubmit(e) {
         e.preventDefault();
-        console.log('data', this.getFormValue())
+
+        const formData = this.getFormValue();
+        formData.date = new Date();
+        console.log(formData);
+
+        if(!this.isValid()) return;
+        
+        const resp = await DataBaseApi.postRequest(this.apiPoint, formData);
+        console.log(resp);
+
+
         this.clear();
-        this.hide();
     }
 
     destroy() {
