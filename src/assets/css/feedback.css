@@ -89,3 +89,23 @@ p{
     font-style: italic;
     font-weight: bold;
 }
+.layout { 
+    width: 980px; 
+    margin: auto; 
+    position: relative;
+}
+.feedback1,.feedback2,.feedback3{
+    position: absolute;
+    text-align: center;
+    margin: 20px;
+    width: 200px;
+}
+.feedback2 {  
+    left: 38%;
+}
+.feedback3 { 
+    right: 0;
+}
+.text2{
+    font-size: 20px;
+}
