@@ -1,6 +1,16 @@
-import Feedback from './modules/feedback';
+import Feedback, {FormFeedBack} from './modules/feedback';
+import {Validators} from './core/index';
 
-window.addEventListener('DOMContentLoaded', () => {
- console.log('start')
- new Feedback();
+document.addEventListener('DOMContentLoaded', () => {
+ new FormFeedBack({
+    showBtnFormSel: '.feedback-form-btn',
+    parentSel: '.feedback',
+    formSel: '.feedback-form',
+    apiPoint: 'feedbacks',
+    submitBtnSel: '.feedback-form-submit',
+    controls: {
+        name: [Validators.required],
+        feedback: [Validators.required],
+    }
+ }).init()
 });
