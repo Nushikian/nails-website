@@ -92,32 +92,37 @@ p{
 .feedback-form.hide {
     display: none;
 }
+.feedback-wrapper {
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+    justify-content: center;
+}
 .layout { 
     width: 980px; 
     margin: auto; 
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
 }
-.feedback1,.feedback2,.feedback3{
-    position: absolute;
-    text-align: center;
-    margin: 20px;
-    width: 200px;
-}
-.feedback2 {  
-    left: 38%;
-}
-.feedback3 { 
-    right: 0;
+.feedback {
+    display: flex;
+    flex-direction:column;
+    align-items:  center;
+    justify-content: center;
+    margin-right: 40px;
 }
 .text2{
     font-size: 20px;
 }
- .form{
-    width: 800px;
-    height: 400px;
-    position: relative;
-    margin-top: 690px;
-    left: 30%;
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 input,textarea{
     background-color: #fef2e5;
@@ -131,7 +136,6 @@ input{
     position: relative;
     padding: 7px;
     margin: 7px;
-    left: 80px;
 }
 textarea{
     padding:15px;
@@ -148,17 +152,10 @@ textarea{
     width: 140px;
     left: 0;
 }
-.column{
-    position: relative;
-    float: right;
-    bottom: 145px;
-}
 .text4{
-    position: absolute;
     font-family: "italic";
     font-size: 40px;
     font-style: italic;
     font-weight: bold;
     bottom:0;
-    left: 42%;
 }

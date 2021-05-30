@@ -1,10 +1,29 @@
-import {FormHTML} from '../core/index';
+import {FormHTML, ComponentHTML} from '../core/index';
 import {DataBaseApi} from '../services/index';
-export default class Feedback {
-    constructor() {
-        console.log('feedback');
+import {feedbackTemplateHTML} from '../templates/feedback';
+export default class FeedbackHTML extends ComponentHTML {
+    constructor(options) {
+        super(options);
+    }
+
+    async init() {
+        console.log(this)
+        const data = await this.loadData();
+        this.clear();
+        this._renderPosts(data)
+    }
+
+    createHTML(feedback, name) {
+        return feedbackTemplateHTML(feedback, name)
+    }
+
+    _renderPosts(data) {
+        DataBaseApi.normalizeData(data).forEach(({feedback, name }) => {
+            this.insert(this.createHTML(feedback, name));
+        });
     }
 }
+
 
 export class FormFeedBack extends FormHTML {
     constructor(options) {
@@ -25,13 +44,15 @@ export class FormFeedBack extends FormHTML {
 
         const formData = this.getFormValue();
         formData.date = new Date();
-        console.log(formData);
+        console.log(this, formData);
 
         if(!this.isValid()) return;
         
         const resp = await DataBaseApi.postRequest(this.apiPoint, formData);
         console.log(resp);
 
+        const feedback = new FeedbackHTML({parentSel: '.layout', apiPoint: 'feedbacks'});
+        feedback.insert(feedback.createHTML(formData.feedback, formData.name));
 
         this.clear();
     }
