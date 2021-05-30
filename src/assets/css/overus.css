@@ -1,3 +1,4 @@
+  
 *{
     box-sizing:border-box;
 }
@@ -15,7 +16,7 @@ body{
     z-index: 1000;
     margin: 0;
     top: 0px;
-    left: 15px;
+    left: 5px;
 }
 #name{
     padding-right: 40%;
@@ -26,10 +27,14 @@ body{
     font-family: 'Mulish-LightItalic';
     src: url(../fonts/Mulish-LightItalic.ttf);
 }
-    @font-face {
-        font-family: 'qoute' ;
-        src: url(../fonts/qoute.ttf);
-    }
+@font-face {
+    font-family: 'qoute' ;
+    src: url(../fonts/qoute.ttf);
+}
+@font-face {
+    font-family: "italic";
+    src: url(../fonts/QTOptimum-Italic.otf);
+  }
 a{
     text-decoration: none;
     color: black;
@@ -74,20 +79,22 @@ a {
     text-align: center;
     width: 750px;
     margin: 0 auto;
-    margin-top: 130px;
+    margin-top: 90px;
 }
 
 p{
     font-family: 'Times New Roman', Times, serif; 
     font-size: 17px;
     line-height: 1.5;
+    color:#666;
 }
 .text1{
     position: relative;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 55px;
+    font-family: "italic";
+    font-size: 40px;
+    font-style: italic;
     top: 25px;
+    font-weight: bold;
 }
 .slider{
     position: static;
