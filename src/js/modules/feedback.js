@@ -22,6 +22,7 @@ export class FormFeedBack extends FormHTML {
 
     onSubmit(e) {
         e.preventDefault();
+        console.log('data', this.getFormValue())
         this.clear();
         this.hide();
     }
