@@ -1,8 +1,10 @@
 import FeedbackHTML, {FormFeedBack} from './modules/feedback';
 import {Validators} from './core/index';
 import {CallBackForm} from './modules/callback';
+import RecordingCardsHTML from './modules/recording';
 
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('load')
     if(document.location.pathname === '/feedback.html') {
         new FeedbackHTML({parentSel: '.layout', apiPoint: 'feedbacks'}).init()
         new FormFeedBack({
@@ -31,5 +33,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 message: [Validators.required],
             }
         }).init();
+    } else if(document.location.pathname === '/recording.html') {
+        console.log('Recording')
+        new RecordingCardsHTML({parentSel: '.recording-list', apiPoint: 'services'}).init()
     }
 });
