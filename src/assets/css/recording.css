@@ -92,89 +92,74 @@ p{
 .feedback-form.hide {
     display: none;
 }
-.feedback-wrapper {
+.feedback-form  {
     display: flex;
-    align-items:  center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    transform: translate(-50%, -50%)
 }
-.layout { 
+.layout{ 
     width: 980px; 
     margin: auto; 
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
 }
-.feedback {
-    display: flex;
-    flex-direction:column;
-    align-items:  center;
-    justify-content: center;
-    margin-right: 40px;
+.service1,.service2,.service3,.service4,.service5,.service6{
+    position: absolute;
+    text-align: center;
+    margin: 20px;
+    width: 250px;
+    height: 400px;
+    border: 1px solid;
+    border-color: rgb(102, 94, 94);
 }
-.text2{
-    font-size: 20px;
+.service2,.service5 {  
+    left: 35%;
 }
-.feedback-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.service3,.service6{ 
+    right: 0;
 }
-input,textarea{
+.content{
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 17px;
+    line-height: 1.5;
+    color:rgb(61, 61, 61);
+    text-align: left;
+    padding: 0 10px 0 20px;
+
+}
+.layout2{
+    width: 980px;
     background-color: #fef2e5;
-    border-radius:10px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    box-shadow:6px 6px 10px rgba(0,0,0,0.06)
-}
-input{
-    position: relative;
-    padding: 7px;
-    margin: 7px;
-}
-textarea{
-    padding:15px;
-    height:150px;
-}
-.submit{
-    position: relative;
-    padding:10px;
-    border:none;
-    background-color:rgb(61, 61, 61);
-    color:#fef2e5;
-    font-weight:600;
-    border-radius:5px;
-    width: 140px;
-    top: 30px;
-    right: 150px;
-}
-.text4{
-    font-family: "italic";
-    font-size: 40px;
-    font-style: italic;
-    font-weight: bold;
-    bottom:0;
+    position: absolute;
+    margin-top: 450px;
 }
 
+
 .footer{
+    position: relative;
     background-color:#fef2e5;
     height: 40px;
     background-color:#fef2e5;
     padding: 20px 0 0 25px;
+    top: 440px;
+    
   }
-.number{
-position: relative;
-font-family: qoute;
-text-align: center;
-top:-40px;
-padding-bottom: 20px;
-}
-#name2{
-padding-right: 40%;
-font-size: 22px;
-}
+  .number{
+    position: relative;
+    font-family: qoute;
+    text-align: center;
+    top:-40px;
+    padding-bottom: 20px;
+  }
+  #name2{
+    padding-right: 40%;
+    font-size: 22px;
+  }
