@@ -124,6 +124,9 @@ p{
     align-items: flex-start;
     justify-content: center;
 }
+.feedback-form .submit {
+    right: 0px;
+}
 input,textarea{
     background-color: #fef2e5;
     border-radius:10px;
