@@ -18,36 +18,36 @@
         <a href="https://instagram.com/nushikian_nails?utm_medium=copy_link"><img src="assets/logo/instagram.png" alt="instagram" width="20px" height="20px" id="inst2"></a>
      
 </header>
-
+<section class="callback">
     <div id="Form">
-        <form autocomplete="off" action='email.php' method='post'>
+        <form class="callback-form" autocomplete="off">
             <div class="form-zvonok"> 
                 <div>
                     <p>Тема</p>
-                    <input type='text' name='subject' class="subject" placeholder="Вкажіть тему" required>
+                    <input type='text' name='topic' class="subject" placeholder="Вкажіть тему" required>
                 </div>
                 <div class="column">
                     <p >Ел.пошта<span>*</span></p>
-                    <input type='text' name='usermail'placeholder="Додайте Ел.пошту" required>
+                    <input type='text' name='email'placeholder="Додайте Ел.пошту" required>
                 </div>
                 <div>
                     <p>Ім'я <span>*</span></p>
-                    <input type='text' name='username' placeholder="Вкажіть своє ім'я" required>
+                    <input type='text' name='name' placeholder="Вкажіть своє ім'я" required>
                     
                 </div>
                     
                 <div class="column">
                     <p>Адреса</p>
-                    <input type='text' name='useraddress' placeholder="Додайте адресу" required></div>
+                    <input type='text' name='address' placeholder="Додайте адресу" required></div>
                 <div>  
                     <p>Телефон</p>
-                    <input type='text' name='usernumber' placeholder="Вкажіть телефон" required></div>
+                    <input type='text' name='telephone' placeholder="Вкажіть телефон" required></div>
               <div>
-                <p>Повідомлення</p>
-                <textarea rows="7" cols="52" placeholder="Додайте повідомлення..."></textarea>
+                <p>Повідомлення*</p>
+                <textarea rows="7" cols="52" name="message" placeholder="Додайте повідомлення..."></textarea>
             </div>
-            <p>Зображення для завантаження :<input type="file" value="Выберите файл"></p>
-            <input class="submit" type='submit' value='Відправити'>
+            <p>Зображення для завантаження :<input class="callback-form-file" type="file" name="photo" value="Выберите файл"></p>
+            <input class="submit callback-form-submit" type='submit' value='Відправити'>
             
             </div>
             </form>
@@ -60,10 +60,11 @@
                 <p>093 564 6569</p>
         </div>
     </div>
-            <div class="footer">
-                <span id="name2"><p align="center">Fennecc studio</p></span>
-                <p class="number">+38(093)5646569</p>
-            </div>
+</section>
+<div class="footer">
+    <span id="name2"><p align="center">Fennecc studio</p></span>
+    <p class="number">+38(093)5646569</p>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
