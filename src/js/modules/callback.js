@@ -29,7 +29,12 @@ export class CallBackForm extends FormHTML  {
         if(!this.isValid()) return;
         console.log(telegramMessageHTML(formData))
 
-        await TelegramApi.sendMessage(telegramMessageHTML(formData))
+        try {
+            await TelegramApi.sendMessage(telegramMessageHTML(formData))
+            this.successSendData();
+        } catch(err) {
+            this.errorSendData();
+        }
         
         if(this.file) await TelegramApi.sendImage(this.file)
         

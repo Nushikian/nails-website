@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Out Client Feedback</title>
-<link rel="stylesheet" href="assets/css/recording.css">
-</head>
+    <link rel="stylesheet" href="assets/css/recording.css">
+    <link rel="stylesheet" href="assets/css/simplepicker.css">
 <body>
     <header class="header">
         <span id="name">Fennecc studio</span>
@@ -26,6 +26,26 @@
         <div class="recording-list">
            
         </div>
+        <div class="form hide">
+            <form class="recording-form" autocomplete="off">
+                <label>
+                    <p>Имя</p>
+                    <input type='text' name='name' class="subject" placeholder="Ім'я, Призвіще" required>
+                </label>
+                <label>
+                    <p>Телефон</p>
+                    <input type='text' name='telephone' placeholder="Номер телефона" required>
+                </label>
+                <div>
+                    <button class="dataTimePicker" type="button">Дата и время</button>
+                </div>
+                <label class="column">
+                    <p>Пожелания</p>
+                    <textarea rows="7" cols="52" name="wishes" placeholder="Додайте побажання..."></textarea>
+                </label>
+                <button class="submit recording-form-submit">Відправити</button>
+            </form>
+      </div>
     </div>
 </div>
 <div class="footer">

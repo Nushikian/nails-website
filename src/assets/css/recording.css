@@ -112,6 +112,26 @@ p{
     justify-content: center;
     align-content: center;
 }
+.recording-form {
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #dac7b2;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+.recording-form.show {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.recording-form .dataTimePicker {
+    margin: 20px 0px;
+}
 .recording {
     display: flex;
     flex-direction: column;

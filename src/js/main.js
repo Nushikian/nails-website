@@ -1,7 +1,7 @@
 import FeedbackHTML, {FormFeedBack} from './modules/feedback';
 import {Validators} from './core/index';
 import {CallBackForm} from './modules/callback';
-import RecordingCardsHTML from './modules/recording';
+import RecordingCardsHTML, {FormRecording} from './modules/recording';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('load')
@@ -34,7 +34,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }).init();
     } else if(document.location.pathname === '/recording.html') {
-        console.log('Recording')
         new RecordingCardsHTML({parentSel: '.recording-list', apiPoint: 'services'}).init()
+        new FormRecording({
+            parentSel: '.recording',
+            formSel: '.recording-form',
+            submitBtnSel: '.recording-form-submit',
+            apiPoint: 'appointments',
+            controls: {
+                name: [Validators.required],
+                telephone: [Validators.required],
+                wishes: [],
+            }
+        }).init();
     }
 });

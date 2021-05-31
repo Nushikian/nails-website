@@ -1,5 +1,5 @@
 import {FormHTML, ComponentHTML} from '../core/index';
-import {DataBaseApi} from '../services/index';
+import {DataBaseApi, TelegramApi} from '../services/index';
 import {feedbackTemplateHTML} from '../templates/feedback';
 export default class FeedbackHTML extends ComponentHTML {
     constructor(options) {
@@ -47,8 +47,13 @@ export class FormFeedBack extends FormHTML {
         console.log(this, formData);
 
         if(!this.isValid()) return;
-        
-        const resp = await DataBaseApi.postRequest(this.apiPoint, formData);
+        try {
+            const resp = await DataBaseApi.postRequest(this.apiPoint, formData);
+            this.successSendData();
+        } catch(err) {
+            console.error(err);
+            this.errorSendData();
+        }
         console.log(resp);
 
         const feedback = new FeedbackHTML({parentSel: '.layout', apiPoint: 'feedbacks'});

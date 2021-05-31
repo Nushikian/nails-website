@@ -18,6 +18,9 @@ export default class FormHTML {
 
     destroy() {}
 
+    successSendData() {}
+    errorSendData() {}
+
     onSubmit() {}
 
     isValid() {
