@@ -106,25 +106,30 @@ p{
     background-color: black;
     transform: translate(-50%, -50%)
 }
+.recording-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.recording {
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+}
 .layout{ 
     width: 980px; 
     margin: auto; 
     position: relative;
+
 }
-.service1,.service2,.service3,.service4,.service5,.service6{
-    position: absolute;
-    text-align: center;
+.service{
     margin: 20px;
     width: 250px;
     height: 400px;
     border: 1px solid;
     border-color: rgb(102, 94, 94);
-}
-.service2,.service5 {  
-    left: 35%;
-}
-.service3,.service6{ 
-    right: 0;
 }
 .content{
     font-family: 'Times New Roman', Times, serif; 
@@ -149,17 +154,15 @@ p{
     height: 40px;
     background-color:#fef2e5;
     padding: 20px 0 0 25px;
-    top: 440px;
-    
-  }
-  .number{
+}
+.number{
     position: relative;
     font-family: qoute;
     text-align: center;
     top:-40px;
     padding-bottom: 20px;
-  }
-  #name2{
+}
+#name2{
     padding-right: 40%;
     font-size: 22px;
-  }
+}
