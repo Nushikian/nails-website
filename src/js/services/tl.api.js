@@ -1,7 +1,7 @@
 const TEL_TOKEN = '1806725342:AAEl5-Ze33o90DsyJgZHQKmsQ_sWV-kFq3U';
 const CHAT_ID = '-585855745';
 
-export default class TelegramApi {
+export class TelegramApi {
     constructor(chatId) {
         this.chatId = chatId || CHAT_ID;
     }
@@ -33,7 +33,15 @@ export default class TelegramApi {
 
     static async sendMessage(message) {
         try {
-            const request = new Request(TelegramApi.apiUrl(TEL_TOKEN, 'sendMessage', `?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`));
+            const request = new Request(TelegramApi.apiUrl(TEL_TOKEN, 'sendMessage'), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TelegramApi.chatId || CHAT_ID,
+                    parse_mode: 'HTML',
+                    text: message,
+                })
+            });
             return await _useRequest(request);
         } catch(err) {
             console.error(err);
