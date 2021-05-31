@@ -1,6 +1,6 @@
 import FeedbackHTML, {FormFeedBack} from './modules/feedback';
 import {Validators} from './core/index';
-import {TelegramApi} from './services/index';
+import {TelegramApi} from './services/index'
 
 document.addEventListener('DOMContentLoaded', async () => {
     if(document.location.pathname === '/feedback.html') {
@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 service: [Validators.required],
                 feedback: [Validators.required],
             }
-        }).init()
+        }).init();
     }
 });

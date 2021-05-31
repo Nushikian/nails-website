@@ -47,9 +47,36 @@ export class TelegramApi {
             console.error(err);
         }
     }
+    
+    static async sendImage(file) {
+        try {
+            const request = new Request(TelegramApi.apiUrl(TEL_TOKEN, 'sendPhoto'), {
+                method: 'POST',
+                body: TelegramApi.normalizeToFormData({
+                    chat_id: TelegramApi.chatId || CHAT_ID,
+                    photo: file,
+                })
+            });
+            return await _useRequest(request);
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+    static normalizeToFormData(data) {
+        const formData  = new FormData();
+    
+        for(const name in data) {
+            formData.append(name, data[name]);
+        }
+
+        return formData;
+    }
+    
 }
 
 async function _useRequest(request) {
     const response = await fetch(request);
     return await response.json()
 }
+ 
