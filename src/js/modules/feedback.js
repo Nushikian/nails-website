@@ -48,11 +48,11 @@ export class FormFeedBack extends FormHTML {
 
         if(!this.isValid()) return;
         try {
-            const resp = await DataBaseApi.postRequest(this.apiPoint, formData);
-            this.successSendData();
+            await DataBaseApi.postRequest(this.apiPoint, formData);
+            this.onSuccessSendData();
         } catch(err) {
             console.error(err);
-            this.errorSendData();
+            this.onErrorSendData();
         }
         console.log(resp);
 

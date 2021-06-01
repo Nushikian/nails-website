@@ -18,8 +18,8 @@ export default class FormHTML {
 
     destroy() {}
 
-    successSendData() {}
-    errorSendData() {}
+    onSuccessSendData() {}
+    onErrorSendData() {}
 
     onSubmit() {}
 

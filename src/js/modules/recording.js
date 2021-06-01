@@ -67,10 +67,10 @@ export class FormRecording extends FormHTML {
         try {
             TelegramApi.sendMessage(telegramMessageHTML(formData))
             await DataBaseApi.postRequest(this.apiPoint, formData);
-            this.successSendData();
+            this.onSuccessSendData();
         } catch(err) {
             console.error(err);
-            this.errorSendData();
+            this.onErrorSendData();
         }
        
         this.clear();
