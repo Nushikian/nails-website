@@ -68,6 +68,7 @@ a {
 #photo{
     width: 100%;
     margin-top: 70px;
+    height: 50vh;
 } 
 .block1{
     position: relative;
@@ -105,13 +106,20 @@ h1{
     font-family: Mulish-LightItalic;
     color: #fec697;
 }
+/* .card {
+    display: flex;
+    justify-content: center;
+}
+.card .fp-tableCell {
+    display: flex;
+    justify-content: center;
+} */
 .perfect{
     position: relative;
     font-size: 25px;
     font-family: Mulish-LightItalic ;
     top: -15px;
 }
-
 .manikur{
     position: relative;
     width: 100%;

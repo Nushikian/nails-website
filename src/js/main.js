@@ -3,9 +3,22 @@ import {Validators} from './core/index';
 import {CallBackForm} from './modules/callback';
 import RecordingCardsHTML, {FormRecording} from './modules/recording';
 import {success, error} from './core/message';
+import fullPage from 'fullpage.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    if(document.location.pathname === '/feedback.html') {
+    if(document.location.pathname === '/') {
+        new fullPage('#fullpage', {
+            //options here
+            autoScrolling:true,
+            scrollHorizontally: true
+        });
+    } else if(document.location.pathname === '/services.html') {
+        new fullPage('#fullpage', {
+            //options here
+            autoScrolling:true,
+            scrollHorizontally: true
+        });
+    } else if(document.location.pathname === '/feedback.html') {
         new FeedbackHTML({parentSel: '.layout', apiPoint: 'feedbacks'}).init()
         const formFeedBack = new FormFeedBack({
             parentSel: '.feedback-wrapper',
