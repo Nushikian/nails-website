@@ -6,3 +6,11 @@ export function feedbackTemplateHTML(description, name) {
         </div>
     `
 }
+
+export function telegramMessageHTML({name, service, feedback}) {
+    return `
+<b>ОТЗЫВ ОТ ПОЛЬЗОВАТЛЕЯ  ${name}</b>,
+Услуга: ${service}
+Отзыв: ${feedback},
+    `;
+}

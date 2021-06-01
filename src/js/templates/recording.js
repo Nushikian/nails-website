@@ -15,11 +15,11 @@ export function cardTemplateHTML({image, duration, coast, type, id}) {
 
 export function telegramMessageHTML({type, name, telephone, wishes, recordDate}) {
     return `
-    <b>ЗАПИСЬ НА ${type}</b>
-    Услуга: <b>${type}</b>
-    Имя: ${name}
-    Время: ${recordDate}
-    Телефон: <a href="tel:${telephone}">${telephone}</a>
-    Пожелания: ${wishes},
+<b>ЗАПИСЬ НА ${type}</b>
+Услуга: <b>${type}</b>
+Имя: ${name}
+Время: ${recordDate}
+Телефон: <a href="tel:${telephone}">${telephone}</a>
+Пожелания: ${wishes},
     `;
 }

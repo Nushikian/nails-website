@@ -2,12 +2,12 @@ import FeedbackHTML, {FormFeedBack} from './modules/feedback';
 import {Validators} from './core/index';
 import {CallBackForm} from './modules/callback';
 import RecordingCardsHTML, {FormRecording} from './modules/recording';
+import {success, error} from './core/message';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('load')
     if(document.location.pathname === '/feedback.html') {
         new FeedbackHTML({parentSel: '.layout', apiPoint: 'feedbacks'}).init()
-        new FormFeedBack({
+        const formFeedBack = new FormFeedBack({
             parentSel: '.feedback-wrapper',
             formSel: '.feedback-form',
             apiPoint: 'feedbacks',
@@ -17,9 +17,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 service: [Validators.required],
                 feedback: [Validators.required],
             }
-        }).init();
+        });
+
+        formFeedBack.onSuccessSendData = () => {
+            success(' Your feedback was sent successfully')
+        }
+
+        formFeedBack.onErrorSendData = () => {
+            error()
+        }
+
+        formFeedBack.init();
     } else if(document.location.pathname === '/connection.html') {
-        new CallBackForm({
+        const callBackForm = new CallBackForm({
             parentSel: '.callback',
             formSel: '.callback-form',
             submitBtnSel: '.callback-form-submit',
@@ -32,10 +42,20 @@ document.addEventListener('DOMContentLoaded', async () => {
                 telephone: [],
                 message: [Validators.required],
             }
-        }).init();
+        });
+
+        callBackForm.onSuccessSendData = () => {
+            success('We will contact you soon');
+        }
+
+        callBackForm.onErrorSendData = () => {
+            error()
+        }
+
+        callBackForm.init();
     } else if(document.location.pathname === '/recording.html') {
         new RecordingCardsHTML({parentSel: '.recording-list', apiPoint: 'services'}).init()
-        new FormRecording({
+        const formRecording = new FormRecording({
             parentSel: '.recording',
             formSel: '.recording-form',
             submitBtnSel: '.recording-form-submit',
@@ -45,6 +65,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 telephone: [Validators.required],
                 wishes: [],
             }
-        }).init();
+        });
+
+        formRecording.onSuccessSendData = () => {
+            success('Your successfully appointment on service');
+        }
+
+        formRecording.onErrorSendData = () => {
+            error()
+        }
+
+        formRecording.init();
     }
 });
